@@ -20,7 +20,7 @@ public class LRUCache<K, V> {
     /**
      * 添加元素
      */
-    public synchronized V put(K key, V value) {
+    public synchronized void put(K key, V value) {
         Item<K, V> exist = map.get(key);
         if (exist != null) {
             linkedList.remove(exist);
@@ -33,8 +33,6 @@ public class LRUCache<K, V> {
         Item<K, V> newItem = new Item<>(key, value);
         linkedList.addFirst(newItem);
         map.put(key, newItem);
-
-        return value;
     }
 
     /**
@@ -69,7 +67,7 @@ public class LRUCache<K, V> {
         System.out.println();
     }
 
-    class DoubleDirectLinkedList<K, V> {
+    private class DoubleDirectLinkedList<K, V> {
         Item<K, V> head;
         Item<K, V> tail;
         int count;
@@ -137,7 +135,7 @@ public class LRUCache<K, V> {
     }
 
 
-    class Item<K, V> {
+    private class Item<K, V> {
         K key;
         V value;
         Item<K, V> pre;

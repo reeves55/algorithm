@@ -1,4 +1,4 @@
-package com.xiaolee.algorithm.linkedlist;
+package com.xiaolee.algorithm.Linkedlist;
 
 public class LinkedListOperation {
     public static void main(String[] args) {
