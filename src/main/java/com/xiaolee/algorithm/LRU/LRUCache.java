@@ -1,7 +1,6 @@
 package com.xiaolee.algorithm.LRU;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class LRUCache<K, V> {
     private int capacity;
@@ -58,7 +57,6 @@ public class LRUCache<K, V> {
             linkedList.remove(item);
             return item.getValue();
         }
-
         return null;
     }
 
